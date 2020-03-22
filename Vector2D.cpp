@@ -61,7 +61,7 @@ ostream &operator<<(ostream &os, const Vector2D &v) {
 }
 
 istream &operator>>(istream &is, Vector2D &v) {
-    int _x, _y;
+    double _x, _y;
     is >> _x >> _y;
     v.setX(_x);
     v.setY(_y);
