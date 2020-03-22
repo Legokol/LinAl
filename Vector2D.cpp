@@ -28,7 +28,7 @@ void Vector2D::rotate(double angle) {
 }
 
 bool Vector2D::operator==(const Vector2D &v2) const {
-    return x == v2.getX() && y == v2.getY();
+    return getX() == v2.getX() && getY() == v2.getY();
 }
 
 bool Vector2D::operator!=(const Vector2D &v2) const {
@@ -36,11 +36,11 @@ bool Vector2D::operator!=(const Vector2D &v2) const {
 }
 
 Vector2D Vector2D::operator+(const Vector2D &v2) const {
-    return Vector2D(x + v2.getX(), y + v2.getY());
+    return Vector2D(getX() + v2.getX(), getY() + v2.getY());
 }
 
 Vector2D Vector2D::operator-(const Vector2D &v2) const {
-    return Vector2D(x + v2.getX(), y + v2.getY());
+    return Vector2D(getX() - v2.getX(), getY() - v2.getY());
 }
 
 Vector2D Vector2D::operator*(const double a) const {
