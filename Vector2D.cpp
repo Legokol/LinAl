@@ -47,8 +47,8 @@ Vector2D Vector2D::operator*(const double a) const {
     return Vector2D(getX() * a, getY() * a);
 }
 
-double Vector2D::operator*(const Vector2D &v) const {
-    return getX() * v.getX() + getY() * v.getY();
+double Vector2D::operator*(const Vector2D &v2) const {
+    return getX() * v2.getX() + getY() * v2.getY();
 }
 
 Vector2D operator*(double a, const Vector2D &v) {

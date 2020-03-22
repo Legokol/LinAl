@@ -29,7 +29,7 @@ public:
 
     Vector2D operator*(const double a) const;
 
-    double operator*(const Vector2D &v) const; //Скалярное произведение векторов
+    double operator*(const Vector2D &v2) const; //Скалярное произведение векторов
 
 private:
     double x, y;
