@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "Vector2D.h"
 
 using namespace std;
@@ -19,6 +20,13 @@ void Vector2D::setY(double _y) {
     y = _y;
 }
 
+void Vector2D::rotate(double angle) {
+    angle = angle * 3.14 / 180;
+    double _x = getX(), _y = getY();
+    setX(_x * cos(angle) + _y * sin(angle));
+    setY(-_x * sin(angle) + _y * cos(angle));
+}
+
 bool Vector2D::operator==(const Vector2D &v2) const {
     return x == v2.getX() && y == v2.getY();
 }
@@ -37,6 +45,10 @@ Vector2D Vector2D::operator-(const Vector2D &v2) const {
 
 Vector2D Vector2D::operator*(const double a) const {
     return Vector2D(getX() * a, getY() * a);
+}
+
+double Vector2D::operator*(const Vector2D &v) const {
+    return getX() * v.getX() + getY() * v.getY();
 }
 
 Vector2D operator*(double a, const Vector2D &v) {
