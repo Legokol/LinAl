@@ -82,7 +82,7 @@ Matrix Matrix::operator+(const Matrix &m2) const {
 
 ostream &operator<<(ostream &os, const Matrix &M) {
     int m = M.getStr(), n = M.getCol();
-    cout << '{';
+    os  << '{';
     for (int i = 0; i < m; i++) {
         cout << '(';
         for (int j = 0; j < n - 1; j++)
@@ -100,7 +100,7 @@ istream &operator>>(istream &is, Matrix &M) {
     double a;
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++) {
-            cin >> a;
+            is >> a;
             M.set(i, j, a);
         }
     return is;
