@@ -7,6 +7,9 @@ using namespace std;
 
 class Matrix {
 public:
+
+    Matrix();
+
     Matrix(int _m, int _n);
 
     Matrix(int _m, int _n, double **a);
@@ -23,6 +26,8 @@ public:
 
     double det() const;
 
+    Matrix &operator = (const Matrix &m2);
+
     bool operator==(const Matrix &m2) const;
 
     bool operator!=(const Matrix &m2) const;
@@ -36,7 +41,7 @@ public:
     Matrix operator*(const Matrix &m2) const;
 
 private:
-    const int m, n;
+    int m, n;
     double **mas;
 };
 
