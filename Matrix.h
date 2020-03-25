@@ -10,6 +10,8 @@ public:
 
     Matrix();
 
+    Matrix(const Matrix &M);
+
     Matrix(int _m, int _n);
 
     Matrix(int _m, int _n, double **a);
@@ -26,7 +28,13 @@ public:
 
     double det() const;
 
-    Matrix &operator = (const Matrix &m2);
+    Matrix &operator=(const Matrix &m2);
+
+    Matrix &operator+=(const Matrix &m2);
+
+    Matrix &operator-=(const Matrix &m2);
+
+    Matrix &operator*=(double a);
 
     bool operator==(const Matrix &m2) const;
 
@@ -44,6 +52,8 @@ private:
     int m, n;
     double **mas;
 };
+
+Matrix operator*(double a, Matrix &M);
 
 ostream &operator<<(ostream &os, const Matrix &M);
 
