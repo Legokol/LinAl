@@ -1,6 +1,7 @@
 #include "Matrix.h"
 #include <iostream>
 
+
 using namespace std;
 
 Matrix::Matrix() : m(0), n(0), mas(nullptr) {}
@@ -72,18 +73,32 @@ Matrix &Matrix::operator-=(const Matrix &m2) {
 }
 
 Matrix &Matrix::operator*=(double a) {
-    *this = *this *a;
+    *this = *this * a;
     return *this;
 }
 
-double Matrix::det() const {
+/*double Matrix::det() const {
     if (m != n) {
         cout << "Can't calculate determinant for non-quadratic matrix." << endl;
         return 0;
     }
     if (m == 1)
         return mas[0][0];
-}
+    double d = 0, e = -1, **a;
+    for (int i = 0; i <= m; i++) {
+        a = new double *[m-1];
+        for (int j = 0; j < m; j++) {
+            a[j] = new double[m-1];
+            for (int k = 0; k < m; k++)
+                a[i][k] = mas[j][k];
+        }
+        Matrix M(m - 1, n - 1, a);
+        e *= -1;
+        d += e * M.det();
+        delete[] a;
+    }
+    return d;
+}*/
 
 bool Matrix::operator==(const Matrix &m2) const {
     if (m != m2.getStr() || n != m2.getCol())
@@ -151,7 +166,6 @@ Matrix Matrix::operator*(const Matrix &m2) const {
 Matrix operator*(double a, Matrix &M) {
     return M * a;
 }
-
 
 ostream &operator<<(ostream &os, const Matrix &M) {
     int m = M.getStr(), n = M.getCol();

@@ -26,7 +26,7 @@ public:
 
     void set(int i, int j, double a);
 
-    double det() const;
+    //double det() const;
 
     Matrix &operator=(const Matrix &m2);
 
