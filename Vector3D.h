@@ -27,6 +27,8 @@ public:
 
     void rotateZ(double angle); //Поворачивает веткор вокруг оси Z (единичный вектор (0; 0; 1)) на угол angle, заданный в градусах
 
+    Vector3D& operator=( const Vector3D &V);
+
     bool operator==(const Vector3D &v2) const;
 
     bool operator!=(const Vector3D &v2) const;

@@ -19,6 +19,8 @@ public:
 
     void rotate(double angle); //Поворачивает веткор на угол angle, заданный в градусах
 
+    Vector2D& operator=(const Vector2D &v);
+
     bool operator==(const Vector2D &v2) const;
 
     bool operator!=(const Vector2D &v2) const;

@@ -49,6 +49,13 @@ void Vector3D::rotateZ(double angle) {
     setY(-_x * sin(angle) + _y * cos(angle));
 }
 
+Vector3D & Vector3D::operator=(const Vector3D &V) {
+    x = getX();
+    y = getY();
+    z = getZ();
+    return (*this);
+}
+
 bool Vector3D::operator==(const Vector3D &v2) const {
     return x == v2.getX() && y == v2.getY();
 }

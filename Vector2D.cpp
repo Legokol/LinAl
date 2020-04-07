@@ -27,6 +27,12 @@ void Vector2D::rotate(double angle) {
     setY(-_x * sin(angle) + _y * cos(angle));
 }
 
+Vector2D & Vector2D::operator=(const Vector2D &v) {
+    x = v.getX();
+    y = v.getY();
+    return (*this);
+}
+
 bool Vector2D::operator==(const Vector2D &v2) const {
     return getX() == v2.getX() && getY() == v2.getY();
 }
